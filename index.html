@@ -5,6 +5,8 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- added animation link -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <!-- added fav-icon -->
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
   <!-- added css for nav -->
@@ -25,158 +27,191 @@
 </head>
 
 <body>
-  <div class="nav">
+  <div class="nav" data-aos="zoom-out">
     <nav>
       <snap class="img">
         <img src="/image/logo.png" alt="" />
       </snap>
-      <div class="content center">
-      <heading>GIT CHEAT SHEET</heading></div>
+      <div class="contentt">
+        <heading>GIT CHEAT SHEET</heading>
+      </div>
     </nav>
   </div>
   <div class="container">
+    <div class="content" data-aos="fade-right" >
     <h1>SETUP-VSCode</h1>
     <p>Configuring user information used across all local repositories</p>
-    <ol>
-      <li>set a name that is identifiable for credit when review version history</li>
-      <pre class="language-js"><code>git config --global user.name “[firstname lastname]”</code></pre>
-      <li>set an email address that will be associated with each history marker</li>
-      <pre class="language-js"><code>git config --global user.email “[valid-email]”</code></pre>
-      <li>set automatic command line coloring for Git for easy reviewing</li>
-      <pre class="language-js"><code>git config --global color.ui auto</code></pre>
       <ol>
+        <li>set a name that is identifiable for credit when review version history</li>
+        <pre class="language-c"><code>git config --global user.name “[firstname lastname]”</code></pre>
+        <li>set an email address that will be associated with each history marker</li>
+        <pre class="language-c"><code>git config --global user.email “[valid-email]”</code></pre>
+        <li>set automatic command line coloring for Git for easy reviewing</li>
+        <pre class="language-c"><code>git config --global color.ui auto</code></pre>
+      </ol>
+    </div>
+
+    <div class="content" data-aos="fade-left">
+
       <h1>SETUP & INIT</h1>
       <p>Configuring user information, initializing and cloning repositories</p>
       <ol>
-      <li>initialize an existing directory as a Git repository</li>
-      <pre class="language-js"><code>git init</code></pre>
-      <li>retrieve an entire repository from a hosted location via URL</li>
-      <pre class="language-js"><code>git clone [url]</code></pre>
+        <li>initialize an existing directory as a Git repository</li>
+        <pre class="language-c"><code>git init</code></pre>
+        <li>retrieve an entire repository from a hosted location via URL</li>
+        <pre class="language-c"><code>git clone [url]</code></pre>
       </ol>
+    </div>
+
+
+    <div class="content" data-aos="fade-right">
 
 
       <h1>STAGE & SNAPSHOT</h1>
       <p>Working with snapshots and the Git staging area</p>
-      
- <ol>
-    <li>show modified files in working directory, staged for your next commit</li>
-    <pre class="language-js"><code>git status</code></pre>
-    <li>add a file as it looks now to your next commit (stage)</li>
-    <pre class="language-js"><code>git add [file]</code></pre>
-    <li>unstage a file while retaining the changes in working directory</li>
-    <pre class="language-js"><code>git reset [file]</code></pre>
-    <li>diﬀ of what is changed but not staged</li>
-    <pre class="language-js"><code>git diff</code></pre>
-    <li>diﬀ of what is staged but not yet committed</li>
-    <pre class="language-js"><code>git diff --staged</code></pre>
-    <li>commit your staged content as a new commit snapshot</li>
-    <pre class="language-js"><code>git commit -m “[descriptive message]”</code></pre>
- </ol>
 
- <h1>BRANCH & MERGE</h1>
- <p>Isolating work in branches, changing context, and integrating changes</p>
- <ol>
- 
-  <li>list your branches. a * will appear next to the currently active branch</li>
-  <pre class="language-js"><code>git branch</code></pre>
-  <li>create a new branch at the current commit</li>
-  <pre class="language-js"><code>git branch [branch-name]</code></pre>
-  <li>switch to another branch and check it out into your working directory</li>
-  <pre class="language-js"><code>git checkout</code></pre>
-  <li>merge the specified branch’s history into the current one</li>
-  <pre class="language-js"><code>git merge [branch]</code></pre>
-  <li>show all commits in the current branch’s history</li>
-  <pre class="language-js"><code>git log</code></pre>
-  <li>Second Way to Git log</li>
-  <pre class="language-js"><code>git log --pretty=oneline</code></pre>
- 
-  <li>Combining Step 2 and Step 6 in one Command </li>
-  <pre class="language-js"><code>git commit -am "commit message"</code></pre>
- 
- </ol> 
+      <ol>
+        <li>show modified files in working directory, staged for your next commit</li>
+        <pre class="language-c"><code>git status</code></pre>
+        <li>add a file as it looks now to your next commit (stage)</li>
+        <pre class="language-c"><code>git add [file]</code></pre>
+        <li>unstage a file while retaining the changes in working directory</li>
+        <pre class="language-c"><code>git reset [file]</code></pre>
+        <li>diﬀ of what is changed but not staged</li>
+        <pre class="language-c"><code>git diff</code></pre>
+        <li>diﬀ of what is staged but not yet committed</li>
+        <pre class="language-c"><code>git diff --staged</code></pre>
+        <li>commit your staged content as a new commit snapshot</li>
+        <pre class="language-c"><code>git commit -m “[descriptive message]”</code></pre>
+      </ol>
+    </div>
 
 
-
- <h1>INSPECT & COMPARE</h1>
- <p>Examining logs, diﬀs and object information</p>
- <ol>
- 
-  <li>show the commit history for the currently active branch</li>
-  <pre class="language-js"><code>git log</code></pre>
-  <li>show the commits on branchA that are not on branchB</li>
-  <pre class="language-js"><code>git log branchB..branchA</code></pre>
-  <li>show the commits that changed file, even across renames</li>
-  <pre class="language-js"><code>git log --follow [file]</code></pre>
-  <li>show the diﬀ of what is in branchA that is not in branchB</li>
-  <pre class="language-js"><code>git diff branchB...branchA</code></pre>
-  <li>show any object in Git in human-readable format</li>
-  <pre class="language-js"><code>git show [SHA]</code></pre>
- 
- </ol>
+    <div class="content" data-aos="fade-left">
 
 
+      <h1>BRANCH & MERGE</h1>
+      <p>Isolating work in branches, changing context, and integrating changes</p>
+      <ol>
+
+        <li>list your branches. a * will appear next to the currently active branch</li>
+        <pre class="language-c"><code>git branch</code></pre>
+        <li>create a new branch at the current commit</li>
+        <pre class="language-c"><code>git branch [branch-name]</code></pre>
+        <li>switch to another branch and check it out into your working directory</li>
+        <pre class="language-c"><code>git checkout</code></pre>
+        <li>merge the specified branch’s history into the current one</li>
+        <pre class="language-c"><code>git merge [branch]</code></pre>
+        <li>show all commits in the current branch’s history</li>
+        <pre class="language-c"><code>git log</code></pre>
+        <li>Second Way to Git log</li>
+        <pre class="language-c"><code>git log --pretty=oneline</code></pre>
+
+        <li>Combining Step 2 and Step 6 in one Command </li>
+        <pre class="language-c"><code>git commit -am "commit message"</code></pre>
+
+      </ol>
+    </div>
 
 
- <h1>TRACKING PATH CHANGES</h1>
-<p>Versioning file removes and path changes</p>
-<ol>
+    <div class="content" data-aos="fade-right">
 
- <li>delete the file from project and stage the removal for commit</li>
- <pre class="language-js"><code>git rm [file]</code></pre>
+      <h1>INSPECT & COMPARE</h1>
+      <p>Examining logs, diﬀs and object information</p>
+      <ol>
 
- <li>change an existing file path and stage the move</li>
- <pre class="language-js"><code>git mv [existing-path] [new-path]</code></pre>
+        <li>show the commit history for the currently active branch</li>
+        <pre class="language-c"><code>git log</code></pre>
+        <li>show the commits on branchA that are not on branchB</li>
+        <pre class="language-c"><code>git log branchB..branchA</code></pre>
+        <li>show the commits that changed file, even across renames</li>
+        <pre class="language-c"><code>git log --follow [file]</code></pre>
+        <li>show the diﬀ of what is in branchA that is not in branchB</li>
+        <pre class="language-c"><code>git diff branchB...branchA</code></pre>
+        <li>show any object in Git in human-readable format</li>
+        <pre class="language-c"><code>git show [SHA]</code></pre>
 
- <li>show all commit logs with indication of any paths that moved</li>
- <pre class="language-js"><code>git log --stat -M</code></pre>
+      </ol>
+    </div>
 
-</ol>
-
-
+    <div class="content" data-aos="fade-left">
 
 
+      <h1>TRACKING PATH CHANGES</h1>
+      <p>Versioning file removes and path changes</p>
+      <ol>
 
-<h1>IGNORING PATTERNS</h1>
-<p>Preventing unintentional staging or commiting of files</p>
-<ol>
+        <li>delete the file from project and stage the removal for commit</li>
+        <pre class="language-c"><code>git rm [file]</code></pre>
 
- <li>Save a file with desired patterns as .gitignore with either direct string
-  matches or wildcard globs.</li>
- <pre class="language-js"><code>
+        <li>change an existing file path and stage the move</li>
+        <pre class="language-c"><code>git mv [existing-path] [new-path]</code></pre>
+
+        <li>show all commit logs with indication of any paths that moved</li>
+        <pre class="language-c"><code>git log --stat -M</code></pre>
+
+      </ol>
+    </div>
+
+
+    <div class="content" data-aos="fade-right">
+
+
+
+
+
+
+      <h1>IGNORING PATTERNS</h1>
+      <p>Preventing unintentional staging or commiting of files</p>
+      <ol>
+
+        <li>Save a file with desired patterns as .gitignore with either direct string
+          matches or wildcard globs.</li>
+        <pre class="language-c"><code>
   logs/
   *.notes
   pattern*/</code></pre>
 
-  <li>system wide ignore pattern for all local repositories</li>
-  <pre class="language-js"><code>git config --global core.excludesfile [file]</code></pre>
+        <li>system wide ignore pattern for all local repositories</li>
+        <pre class="language-c"><code>git config --global core.excludesfile [file]</code></pre>
 
-</ol>
+      </ol>
+    </div>
 
-
-<h1>SHARE & UPDATE</h1>
-<p>Retrieving updates from another repository and updating local repos</p>
-<ol>
-
- <li>add a git URL as an alias</li>
- <pre class="language-js"><code>git remote add [alias] [url]</code></pre>
-
- <li>fetch down all the branches from that Git remote</li>
- <pre class="language-js"><code>git fetch [alias]</code></pre>
-
- <li>merge a remote branch into your current branch to bring it up to date</li>
- <pre class="language-js"><code>git merge [alias]/[branch]</code></pre>
- <li>Transmit local branch commits to the remote repository branch</li>
- <pre class="language-js"><code>git push [alias] [branch]</code></pre>
- <li>fetch and merge any commits from the tracking remote branch</li>
- <pre class="language-js"><code>git pull [repository link]</code></pre>
-
-</ol>
+    <div class="content" data-aos="fade-up">
 
 
+
+      <h1>SHARE & UPDATE</h1>
+      <p>Retrieving updates from another repository and updating local repos</p>
+      <ol>
+
+        <li>add a git URL as an alias</li>
+        <pre class="language-c"><code>git remote add [alias] [url]</code></pre>
+
+        <li>fetch down all the branches from that Git remote</li>
+        <pre class="language-c"><code>git fetch [alias]</code></pre>
+
+        <li>merge a remote branch into your current branch to bring it up to date</li>
+        <pre class="language-c"><code>git merge [alias]/[branch]</code></pre>
+        <li>Transmit local branch commits to the remote repository branch</li>
+        <pre class="language-c"><code>git push [alias] [branch]</code></pre>
+        <li>fetch and merge any commits from the tracking remote branch</li>
+        <pre class="language-c"><code>git pull [repository link]</code></pre>
+
+      </ol>
+    </div>
 
 
   </div>
   <script src="prism.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+   duration: 2000,
+   offset: 200,
+    });
+  </script>
 </body>
 
 </html>
